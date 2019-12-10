@@ -8,7 +8,14 @@ export class Quotes extends Component {
         this.state = {
             quoteText: ''
         }
+        this.handleClick = this.handleClick.bind(this)
     } /*Here we set our state which will be updated next when the component loads or mounts*/
+
+
+    handleClick () {
+        axios.get('https://api.kanye.rest')
+            .then(response => this.setState({ quoteText: response.data["quote"] }))
+    }
 
     componentDidMount() {
         axios.get('https://api.kanye.rest')
@@ -26,8 +33,7 @@ render() {
     return (
         <div>
             <p>"{quoteText}"</p>
-            <button onClick={this.getClicked}
-                    type='button'>More Wisdom</button>
+            <button className="button" onClick={this.handleClick}>More Wisdom</button>
         </div>
     );
 }   /*Here we actually show the result in jsx form as a variable and finally export it as a component to the parent
