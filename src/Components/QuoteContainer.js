@@ -5,6 +5,7 @@ import React from 'react';
 import TwitterComponent from '../Components/TwitterComponent'
 import Quotes from '../Components/Quotes'
 
+
 const QuoteContainer = () => {
 
     return(

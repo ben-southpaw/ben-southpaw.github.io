@@ -21,7 +21,7 @@ google.options({
 async function analyseSentiment(text = 'Hello, WOlrd') {
     // Imports the Google Cloud client library
     const language = require('@google-cloud/language');
-    debugger;
+
     // Instantiates a client
     const client = new language.LanguageServiceClient();
 

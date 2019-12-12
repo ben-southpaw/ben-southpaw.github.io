@@ -3,6 +3,8 @@ import React, {Component} from 'react';
 import Typical from 'react-typical'
 
 
+
+
 export class Quotes extends Component {
     constructor(props) {
         super(props);
@@ -10,6 +12,7 @@ export class Quotes extends Component {
             kanyeTweet: ''
         }
         this.handleClick = this.handleClick.bind(this)
+
     } /*Here we set our state which will be updated next when the component loads or mounts. Initially it is an empty prob with
     the key of what we will fill in the data with...*/
 
@@ -34,10 +37,13 @@ export class Quotes extends Component {
     iteration of the object. */
 
 
+
+
+
  render() {
     const kanyeTweet = Object.values(this.state);
-    //const sentiment = analyseSentiment(kanyeTweet);
-    const authorOfTweet = <p><strong> - Kanye West</strong></p>;
+     console.log(kanyeTweet);
+    const authorOfTweet = <strong> - Kanye West</strong>;
     return (
         <div>
 
