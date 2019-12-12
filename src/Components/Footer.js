@@ -5,7 +5,8 @@ import React from 'react';
 
 const Footer = () => {
     return(
-        <footer>Footer Footy Footer</footer>
+        <footer>Footer Footy Footer
+        </footer>
     )
 }
 
