@@ -11,7 +11,7 @@ const TwitterComponent = () => {
             screenName="kanyewest"
             options={{height: 400}}
             theme="dark"
-            transparent
+            data-chrome="noheader noborders"
         />
     )
 }

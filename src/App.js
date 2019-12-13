@@ -1,22 +1,16 @@
 import React from 'react';
-import HeaderMenu from './Components/HeaderMenu'
-import SideColumn from './Components/SideColumn'
 import QuoteContainer from './Components/QuoteContainer'
 import Background from './Components/Background'
-import Footer from './Components/Footer'
 import './App.css';
 
 
 function App() {
-    const bg = new Background();
+    const bg = new Background(); /*All threejs work will end up here*/
 
   return (
     <div className="App">
       <div className="grid-wrapper">
-
-
         <QuoteContainer />
-
       </div>
     </div>
   );

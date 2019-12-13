@@ -43,31 +43,28 @@ export class Quotes extends Component {
 
 
  render() {
-    const kanyeTweet = Object.values(this.state);
+    const kanyeTweet = Object.values(this.state);/*Tweets are added to state to be accessible*/
 
      let result = sentiment.analyze(kanyeTweet[0]);
      const wellbeing = getWellbeing(result.comparative);
 
     const data = Data[wellbeing.face];
     const img = data.images[data.index];
-    data.index = (data.index + 1) % data.images.length;
-     console.log(data)
+    data.index = (data.index + 1) % data.images.length;  /*Loop over images when quotes changed sequentially*/
 
-     Background.setNewTexture(img);
+     Background.setNewTexture(img);  /*Set image on box graphic*/
 
-     let analysis = Object.values(result);
-     const authorOfTweet = <strong> - Kanye West</strong>;
     return (
         <div>
             <Typical
-                steps={[`${kanyeTweet}`, 3000]}
+                steps={[`"${kanyeTweet}"- Kanye West`, 1500]}
                 loop={1}
                 wrapper="p"
             />
-            <p>{authorOfTweet}</p>
-            <p>Score:{result.score}</p>
-            <p>Comparison:{result.comparative}</p>
-            <p>Kanye is feeling {wellbeing.text}</p>
+
+            <p className="scores">Score: <strong>{result.score}</strong></p>
+            <p className="scores">Comparison: <strong>{result.comparative}</strong></p>
+            <p className="wellbeing">Kanye is feeling {wellbeing.text}</p>
             <button type="button" className="btn btn-outline-info" onClick={this.handleClick}>More Wisdom</button>
         </div>
     );

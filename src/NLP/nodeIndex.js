@@ -27,11 +27,10 @@ const analyseQuote = async () => {
         client.analyzeSentiment({document: document})
             .then(results => {
                 const sentiment = results[0].documentSentiment;
-                //console.log(`Text: ${text}`);
-                //console.log(`Sentiment score: ${sentiment.score}`);
-                //console.log(`Sentiment magnitude: ${sentiment.magnitude}`);
-                mag = (`Sentiment magnitude: ${sentiment.magnitude}`)
-                console.log(typeof mag);
+                console.log(`Text: ${text}`);
+                console.log(`Sentiment score: ${sentiment.score}`);
+                console.log(`Sentiment magnitude: ${sentiment.magnitude}`);
+
             })
             .catch(err => {
                 console.error('ERROR:', err);
@@ -42,6 +41,4 @@ const analyseQuote = async () => {
 };
 
 
- export {analyseQuote};
-
-//module.exports.analyseQuote = analyseQuote;
+analyseQuote();

@@ -29,17 +29,17 @@ const getWellbeing = val => {
 
     if (val < -0.25) {
         wellbeing.face = 'sad';
-        wellbeing.text = 'A bit shit';
+        wellbeing.text = 'A bit grumps';
 
-        if (val < 0.5) wellbeing.text = 'Super shit'
+        if (val < 0.5) wellbeing.text = 'very shitty'
     } else if (val > -0.25 && val < 0.25) {
         wellbeing.face = 'neutral';
-        wellbeing.text = 'Average';
+        wellbeing.text = 'quite neutral. Meh!';
     } else {
         wellbeing.face = 'happy';
-        wellbeing.text = 'A bit chuffed';
+        wellbeing.text = 'a bit chuffed';
 
-        if (val > 0.5) wellbeing.text = 'Super Chuffed';
+        if (val > 0.5) wellbeing.text = 'super chuffed';
     }
 
     return wellbeing;

@@ -10,8 +10,8 @@ const QuoteContainer = () => {
 
     return(
         <article>
-            <h1>Article</h1>
-            <p>NLP generated predictive tweets here</p>
+            <h1 className="board-game">IS KANYE OK TODAY? </h1>
+            <p>Sentiment analysis of his tweets</p>
             <div className="flex-wrapper">
                 <main className="app">
                     <section className="quotes">
