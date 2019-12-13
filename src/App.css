@@ -15,13 +15,32 @@ body {
   Ubuntu, Cantarell, “Open Sans”, “Helvetica Neue”, sans-serif;
 }
 
+#root {
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+}
+
 .grid-wrapper {
   /*changed the height from 100% to auto as the layout breaks when the height of the content 'overflows'.*/
   height: auto;
   display: grid;
   grid-template-columns: 1fr 3fr;
   grid-template-rows: min-content auto min-content;
-  background-color: #FFAFB0;
+  /*background-color: #FFAFB0;*/
+}
+
+.tweetDisplay {
+  height: 294px;
+  width: 340px;
+  background: white;
+  position: fixed;
+  bottom: 0;
+  right: 0;
 }
 
 aside {

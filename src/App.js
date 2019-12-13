@@ -2,18 +2,21 @@ import React from 'react';
 import HeaderMenu from './Components/HeaderMenu'
 import SideColumn from './Components/SideColumn'
 import QuoteContainer from './Components/QuoteContainer'
+import Background from './Components/Background'
 import Footer from './Components/Footer'
 import './App.css';
 
 
 function App() {
+    const bg = new Background();
+
   return (
     <div className="App">
       <div className="grid-wrapper">
-        <HeaderMenu />
-        <SideColumn />
+
+
         <QuoteContainer />
-        <Footer />
+
       </div>
     </div>
   );

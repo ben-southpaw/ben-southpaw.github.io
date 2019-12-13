@@ -1,9 +1,12 @@
 import axios from 'axios';
 import React, {Component} from 'react';
 import Typical from 'react-typical'
+import Sentiment from 'sentiment';
+import Background from './Background';
+import Data, {getWellbeing} from '../data/data';
 
 
-
+const sentiment = new Sentiment();
 
 export class Quotes extends Component {
     constructor(props) {
@@ -39,20 +42,32 @@ export class Quotes extends Component {
 
 
 
-
  render() {
     const kanyeTweet = Object.values(this.state);
-     console.log(kanyeTweet);
-    const authorOfTweet = <strong> - Kanye West</strong>;
+
+     let result = sentiment.analyze(kanyeTweet[0]);
+     const wellbeing = getWellbeing(result.comparative);
+
+    const data = Data[wellbeing.face];
+    const img = data.images[data.index];
+    data.index = (data.index + 1) % data.images.length;
+     console.log(data)
+
+     Background.setNewTexture(img);
+
+     let analysis = Object.values(result);
+     const authorOfTweet = <strong> - Kanye West</strong>;
     return (
         <div>
-
             <Typical
-                steps={[`${kanyeTweet}`, 1000]}
+                steps={[`${kanyeTweet}`, 3000]}
                 loop={1}
                 wrapper="p"
             />
             <p>{authorOfTweet}</p>
+            <p>Score:{result.score}</p>
+            <p>Comparison:{result.comparative}</p>
+            <p>Kanye is feeling {wellbeing.text}</p>
             <button type="button" className="btn btn-outline-info" onClick={this.handleClick}>More Wisdom</button>
         </div>
     );
