@@ -16,8 +16,8 @@ export class Quotes extends Component {
         }
         this.handleClick = this.handleClick.bind(this)
 
-    } /*Here we set our state which will be updated next when the component loads or mounts. Initially it is an empty prob with
-    the key of what we will fill in the data with...*/
+    } /*Here we set our state which will be updated next when the component loads or mounts. Initially it is an empty prop with
+    the placeholder of what we will fill in the data with...*/
 
 
     componentDidMount() {
