@@ -2,7 +2,7 @@ import * as THREE from 'three';
 import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls';
 
 const url = 'kanye-face-1.jpg'
-const cubeTexture = new THREE.TextureLoader().load(url);
+const cubeTexture = new THREE.TextureLoader().load(url); /*Variable for surface of cube, which fetches random image from public folder*/
 let scale = 1;
 let scaleVel = 0;
 
@@ -13,7 +13,7 @@ class Background {
         this.renderer.setPixelRatio(window.devicePixelRatio);
         this.renderer.setClearColor('pink');
 
-        this.scene = new THREE.Scene();
+        this.scene = new THREE.Scene(); /*Three requires a scene and a camera, which provides the perspective for the graphic/view*/
         this.camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 100);
         this.camera.position.z = 3;
 
@@ -38,7 +38,7 @@ class Background {
     addEvents() {
         window.addEventListener('resize', this.onResize.bind(this));
     }
-
+    /*Update is called rapidly to realise the animation of the cube*/
     update() {
         this.kanyeBoxFace.rotation.y += 0.01;
 
