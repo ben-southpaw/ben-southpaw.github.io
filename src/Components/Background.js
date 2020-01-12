@@ -21,7 +21,7 @@ class Background {
 
         const geometry= new THREE.BoxBufferGeometry(1, 1, 1);
         const material = new THREE.MeshBasicMaterial({ map: cubeTexture });
-        this.kanyeBoxFace = new THREE.Mesh(geometry, material);
+        this.kanyeBoxFace = new THREE.Mesh(geometry, material); /*This combines the elements into a single call*/
 
         this.scene.add(this.kanyeBoxFace);
 

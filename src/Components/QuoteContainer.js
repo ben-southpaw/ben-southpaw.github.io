@@ -16,7 +16,7 @@ const QuoteContainer = () => {
                 <main className="app">
                     <section className="quotes">
                         <div className="quote-text">
-                         <Quotes />
+                         <Quotes /> /*Here we display out component within a container to separate concerns */
                         </div>
                     </section>
                     <section className="tweetDisplay">
