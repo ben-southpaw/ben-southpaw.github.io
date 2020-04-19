@@ -1,10 +1,8 @@
 import axios from 'axios';
 import React, {Component} from 'react';
-import Typical from 'react-typical'
 import Sentiment from 'sentiment';
 import Background from './Background';
 import Data, {getWellbeing} from '../data/data';
-
 
 const sentiment = new Sentiment();
 
@@ -13,15 +11,13 @@ export class Quotes extends Component {
         super(props);
         this.state = {
             kanyeTweet: ''
-        }
+        };
         this.handleClick = this.handleClick.bind(this)
-
     } /*Here we set our state which will be updated next when the component loads or mounts. Initially it is an empty prop with
     the placeholder of what we will fill in the data with....
     --
     This gets called
     */
-
 
     componentDidMount() {
         axios.get('https://api.kanye.rest')
@@ -39,36 +35,30 @@ export class Quotes extends Component {
     handleClick () {
         axios.get('https://api.kanye.rest')
             .then(response => this.setState({ kanyeTweet: response.data["quote"]}))
-    } /*This function provides a response by calling the API to get a new quote. SetState is called and replaces the previous
+            .catch(function (error) {
+                console.log(error);
+            });
+    }
+    /*This function provides a response by calling the API to get a new quote. SetState is called and replaces the previous
     iteration of the object. */
-
-
-
 
  render() {
     const kanyeTweet = Object.values(this.state);/*Tweets are added to state to be accessible*/
-
-     let result = sentiment.analyze(kanyeTweet[0]);
-     const wellbeing = getWellbeing(result.comparative);
-
+    let result = sentiment.analyze(kanyeTweet[0]);
+    const wellbeing = getWellbeing(result.comparative);
     const data = Data[wellbeing.face];
     const img = data.images[data.index];
     data.index = (data.index + 1) % data.images.length;  /*Loop over images when quotes changed sequentially*/
 
-     Background.setNewTexture(img);  /*Set image on box graphic*/
+    Background.setNewTexture(img);  /*Set image on box graphic*/
 
     return (
         <div>
-            <Typical
-                steps={[`"${kanyeTweet}"- Kanye West`, 1500]}
-                loop={1}
-                wrapper="p"
-            />
-
+            <p className="line-1 anim-typewriter" id="KanyeTweet">{`"${kanyeTweet}"- Kanye West`}</p>
             <p className="scores">Score: <strong>{result.score}</strong></p>
             <p className="scores">Comparison: <strong>{result.comparative}</strong></p>
             <p className="wellbeing">Kanye is feeling {wellbeing.text}</p>
-            <button type="button" className="btn btn-outline-info" onClick={this.handleClick}>More Wisdom</button>
+            <button type="button" id="wisdomButton" className="btn btn-outline-info" onClick={this.handleClick}>More Wisdom</button>
         </div>
     );
 }   /*Here we actually show the result in jsx form as a variable. Our target object is called kanyeTweet.
@@ -76,10 +66,6 @@ export class Quotes extends Component {
  Then we use ES6 string interpolation to insert it into where a string would be in the Typical component.
  Then we finally export it as a component to the parent where it can be displayed*/
 }
-
-
-
-
 
 export default Quotes;
 

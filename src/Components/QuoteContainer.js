@@ -11,16 +11,16 @@ const QuoteContainer = () => {
     return(
         <article>
             <h1 className="board-game">IS KANYE OK TODAY? </h1>
-            <p>Sentiment analysis of his tweets</p>
+            <p>Sentiment analysis of his thoughts</p>
             <div className="flex-wrapper">
                 <main className="app">
                     <section className="quotes">
                         <div className="quote-text">
-                         <Quotes /> /*Here we display out component within a container to separate concerns */
+                         <Quotes />
                         </div>
                     </section>
+
                     <section className="tweetDisplay">
-                        <div className="quote-text"></div>
                         <TwitterComponent />
                     </section>
                 </main>
@@ -28,6 +28,6 @@ const QuoteContainer = () => {
             </div>
         </article> /*This is a container to provide the context for other logic. Ideal for separating concerns.*/
     )
-}
+};
 
 export default QuoteContainer;

@@ -43,6 +43,6 @@ const getWellbeing = val => {
     }
 
     return wellbeing;
-}
+};
 
 export { getWellbeing };
