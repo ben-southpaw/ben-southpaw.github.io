@@ -54,7 +54,7 @@ export class Quotes extends Component {
 
     return (
         <div>
-            <p className="line-1 anim-typewriter" id="KanyeTweet">{`"${kanyeTweet}"- Kanye West`}</p>
+            <p className="line-1 anim-typewriter" id="KanyeTweet">{`"${kanyeTweet}" - Kanye West`}</p>
             <p className="scores">Score: <strong>{result.score}</strong></p>
             <p className="scores">Comparison: <strong>{result.comparative}</strong></p>
             <p className="wellbeing">Kanye is feeling {wellbeing.text}</p>
