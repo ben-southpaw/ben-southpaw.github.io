@@ -48,13 +48,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ],
-    "proxy": [
-      "http://localhost:5000"
-    ]
+    "proxy": ["http://localhost:5000"]
   },
   "devDependencies": {
     "gh-pages": "^2.2.0",
     "prettier": "1.19.1"
   },
-  "homepage": "http://ben-southpaw.github.io/kanye"
+    "homepage": "https://ben-southpaw.github.io/"
 }
