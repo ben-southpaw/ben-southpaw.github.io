@@ -56,7 +56,5 @@
     "gh-pages": "^2.2.0",
     "prettier": "1.19.1"
   },
-  "properties": {
-    "homepage": "ben-southpaw.github.io/kanye"
-  }
+  "homepage": "http://ben-southpaw.github.io/kanye"
 }
